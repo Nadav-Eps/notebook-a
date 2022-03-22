@@ -16,9 +16,10 @@ CHECK(notebook.read(1,2,9,Direction::Horizontal,3)==0);//should read bhe
 
 //now well see what happens if a message runs over another
 
-CHECK(notebook.write(1,2,11,Direction::Vertical,"nadav")==0);
-CHECK(notebook.read(1,2,10,Direction::Horizontal,5)==0);//the 'n' took over 'e' spot in the "hello" so we'll get hnllo
-CHECK(notebook.read(1,2,11,Direction::Vertical,5)==0);//should read "nadav" 
+CHECK_THROWS(notebook.write(1,2,10,Direction::Horizontal,"nadav123"));
+CHECK_THROWS(notebook.write(1,2,9,Direction::Vertical,"nadav"));
+CHECK(notebook.read(1,2,10,Direction::Horizontal,5)==0);
+CHECK(notebook.read(1,2,11,Direction::Vertical,5)==0);
 
 //now well try to write to diffrent pages
 
