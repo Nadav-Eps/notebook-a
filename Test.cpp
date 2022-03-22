@@ -70,3 +70,14 @@ TEST_CASE("Negative inputs"){
     CHECK_THROWS(notebook.read(100,-1,10,Direction::Horizontal,-13));
     
 }
+TEST_CASE("Out of line inputs"){
+    CHECK_THROWS(notebook.write(100,1,100,Direction::Horizontal,"hey"));//each row lenght is 100 
+    CHECK_THROWS(notebook.write(10,31,99,Direction::Horizontal,"hey"));
+    CHECK_THROWS(notebook.write(3,11,104,Direction::Horizontal,"hey"));
+    CHECK_THROWS(notebook.write(100,1,200,Direction::Vertical,"hey"));
+    CHECK_THROWS(notebook.write(100,1,111,Direction::Vertical,"hey"));
+    CHECK_THROWS(notebook.write(100,1,90,Direction::Horizontal,"123456789123"));
+    CHECK_THROWS(notebook.write(100,1,80,Direction::Horizontal,"123456789123123456789123"));
+    
+
+}
