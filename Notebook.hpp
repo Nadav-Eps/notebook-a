@@ -7,9 +7,9 @@ using namespace std;
 namespace ariel {
    class Notebook{
       public :
-int read(int page ,int col,int row,Direction d,int len);
-int write(int page, int col, int row, Direction d,string s);
-int erase(int page ,int col,int row,Direction d,int len);
-void show(int page);
+static int read(int page ,int col,int row,Direction d,int len);
+static int write(int page, int col, int row, Direction d,const string &s);
+static int erase(int page ,int col,int row,Direction d,int len);
+static void show(int page);
    };
    }

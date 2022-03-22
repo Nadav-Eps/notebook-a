@@ -11,7 +11,7 @@ namespace ariel{
         
         return 0;
     }
-    int Notebook::write(int page, int col, int row, Direction d,string s){
+    int Notebook::write(int page, int col, int row, Direction d,const string  &s){
         return 0;
     }
     void Notebook::show(int page){
